@@ -1,0 +1,42 @@
+# Jekyll build output
+_site/
+
+# Node
+node_modules/
+
+# Bundler / gems
+.bundle/
+vendor/bundle/
+vendor/
+
+# Caches / metadata
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# system files
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
+*.swp
+
+# scripts
+*.sh
+
+# logs / env
+*.log
+.env
+.env.local
+
+# editor / ide
+.vscode/
+.idea/
+
+# local backups / placeholders
+about.markdown.txt
+index.markdown.txt
+COMMIT_MESSAGE.txt
+backup/root-backups/
+
+# optional: ignore the entire backup/ if you don't want backups in the repo
+backup/
