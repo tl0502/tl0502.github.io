@@ -3,22 +3,30 @@ _site/
 
 # Node
 node_modules/
+package-lock.json
 
 # Bundler / gems
 .bundle/
 vendor/bundle/
 vendor/
+Gemfile.lock
 
 # Caches / metadata
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
 
+# Python virtual environment
+.venv/
+venv/
+*.pyc
+
 # system files
 .DS_Store
 */.DS_Store
 */*/.DS_Store
 *.swp
+Thumbs.db
 
 # scripts
 *.sh
@@ -31,15 +39,20 @@ vendor/
 # editor / ide
 .vscode/
 .idea/
+*.sublime-project
+*.sublime-workspace
 
 # local backups / placeholders
 about.markdown.txt
 index.markdown.txt
 COMMIT_MESSAGE.txt
-backup/root-backups/
-
-# optional: ignore the entire backup/ if you don't want backups in the repo
 backup/
+my-jekyll-theme/
 
-# githubcopilot files
+# Temporary files
+*.bak
+*.tmp
+*~
+
+# GitHub Copilot files
 .github/copilot-instructions.md

@@ -1,22 +1,20 @@
 # Site settings
 title: TVXL Blog
-SEOTitle: TVXL Blog
+SEOTitle: TVXL Blog | 技术博客
 header-img: img/home-bg.png
 email: tVXL301@gmail.com
-description: ""
-keyword: ""
-url: "https://tvxl.top"              # your host, for absolute URL
-baseurl: ""         # empty when deploying to domain root
+description: "分享技术、记录成长 - TVXL的个人技术博客"
+keyword: "技术博客,前端开发,JavaScript,Web开发,编程"
+url: "https://tvxl.top"
+baseurl: ""
 
 
 
 # SNS settings
-RSS: false
-weibo_username:     
-zhihu_username:     
-github_username:    
-twitter_username:  T_L2003
-facebook_username:  TVXL
+RSS: true
+github_username: TVXL520
+twitter_username: T_L2003
+facebook_username: TVXL
 
 
 
@@ -25,7 +23,7 @@ facebook_username:  TVXL
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","about.markdown","index.markdown","about.markdown.bak","index.markdown.bak"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","package-lock.json","README.md","README.zh.md","about.markdown","index.markdown","*.bak","backup","vendor",".bundle",".venv","my-jekyll-theme","COMMIT_MESSAGE.txt"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 
@@ -49,13 +47,24 @@ kramdown:
 
 
 
-# Disqus settings
-#disqus_username: _your_disqus_short_name_
+# Comments system (Duoshuo has been shut down in 2017)
+# Giscus settings - Modern comment system based on GitHub Discussions
+# To enable Giscus:
+# 1. Go to https://giscus.app to generate your configuration
+# 2. Fill in the values below with your settings
+giscus:
+  repo: TVXL520/TVXL520.github.io
+  repo-id: # Get from https://giscus.app
+  category: # Discussions category name (recommended: "Announcements" or "General")
+  category-id: # Get from https://giscus.app
+  mapping: pathname # How to map pages to discussions (pathname, url, title, og:title)
+  reactions-enabled: 1 # Enable reactions (1 or 0)
+  emit-metadata: 0
+  theme: preferred_color_scheme # light, dark, dark_dimmed, preferred_color_scheme
+  lang: zh-CN # Language code
 
-# Duoshuo settings
-duoshuo_username: huxblog
-# Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+# Alternative: Disqus (if you prefer)
+# disqus_username: _your_disqus_short_name_
 
 
 
@@ -82,22 +91,15 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 
 
 
-# Friends
+# Friends (Add your real friend links here)
 friends: [
     {
         title: "Hux Blog",
-        href: "http://huangxuan.me"
-    },{
-        title: "Foo",
-        href: "#"
-    },{
-        title: "Bar",
-        href: "#"
-    },{
-        title: "Example Friends",
-        href: "#"
-    },{
-        title: "It helps SEO",
-        href: "#"
+        href: "https://huangxuan.me"
     }
+    # Add more friend links here
+    # {
+    #     title: "Friend Name",
+    #     href: "https://example.com"
+    # }
 ]

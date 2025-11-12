@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(del /F jsjquery.js jsbootstrap.js 2)",
+      "Bash(nul)",
+      "Bash(del /F csshux-blog.css 2)",
+      "Bash(dir:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
