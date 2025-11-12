@@ -53,10 +53,10 @@ kramdown:
 # 1. Go to https://giscus.app to generate your configuration
 # 2. Fill in the values below with your settings
 giscus:
-  repo: TVXL520/TVXL520.github.io
-  repo-id: # Get from https://giscus.app
-  category: # Discussions category name (recommended: "Announcements" or "General")
-  category-id: # Get from https://giscus.app
+  repo: TL0502/tl0502.github.io
+  repo-id: R_kgDOQTZLww
+  category: Announcements # Discussions category name (recommended: "Announcements" or "General")
+  category-id: DIC_kwDOQTZLw84CxtuF
   mapping: pathname # How to map pages to discussions (pathname, url, title, og:title)
   reactions-enabled: 1 # Enable reactions (1 or 0)
   emit-metadata: 0
