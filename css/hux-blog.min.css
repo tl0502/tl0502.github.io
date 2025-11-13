@@ -99,9 +99,14 @@ blockquote {
 }
 /* customize Style for navBar button */
 .navbar-default .navbar-toggle {
-  display: block;
+  display: none;
   margin-top: -20px;
   text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .navbar-default .navbar-toggle {
+    display: block;
+  }
 }
 br + small.img-hint {
   margin-top: -40px;
@@ -842,6 +847,11 @@ body {
   margin-right: 2px;
   margin-bottom: 2px;
   border-radius: 50%;
+}
+@media screen and (max-width: 768px) {
+  .navbar-default .navbar-toggle {
+    display: block;
+  }
 }
 .navbar-default .navbar-toggle .icon-bar {
   width: 18px;

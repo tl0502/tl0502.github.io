@@ -1,36 +1,42 @@
-# TVXL Blog Boilerplate
+# TVXL520.github.io
 
-##### This is the boilerplate of the original template (see upstream repository: [upstream template repository](https://github.com/Huxpro/huxpro.github.io)).
+这是一个基于 Jekyll 的静态博客站点，用于展示个人博客内容。
 
-#### [View Boilerplate &rarr;](http://huangxuan.me/huxblog-boilerplate/)
+## 安装
 
-#### [View Live Demo &rarr;](http://huangxuan.me)
+确保你已安装 Ruby 和 Node.js。
 
-## If you like this template, please star the upstream repository instead. Thank you!
+```bash
+# 安装 Ruby gems
+bundle install
 
-## Backup & Recovery
-
-During an upgrade I consolidated older source backups into the `backup/` folder to avoid duplicate output files.
-
-- Main backups:
-	- `backup/about.markdown` — original about page source
-	- `backup/index.markdown` — original index/home source
-	- `backup/root-backups/` — contains root-level copies and historic `.bak`/`.txt` files if you need them
-
-If you want to restore the about or index page from a backup, run these PowerShell commands from the repository root (they will overwrite the existing files):
-
-```powershell
-# Restore about page
-Copy-Item -Path "backup/about.markdown" -Destination "about.markdown" -Force
-
-# Restore index page
-Copy-Item -Path "backup/index.markdown" -Destination "index.markdown" -Force
+# 安装 Node.js 依赖
+npm install
 ```
 
-After restoring, run (in PowerShell):
+## 使用
 
-```powershell
-bundle install; bundle exec jekyll build
+### 本地预览
+
+```bash
+# 构建前端资源
+npm run build  # 或 npx grunt
+
+# 本地预览
+bundle exec jekyll serve
 ```
 
-If you prefer I can remove the root-level lightweight placeholder files (`about.markdown` and `index.markdown`) entirely and keep only the backups under `backup/` — tell me and I will perform that cleanup and prepare a git commit message.
+### 构建站点
+
+```bash
+# 构建站点
+bundle exec jekyll build
+```
+
+## 主题出处
+
+本站点基于 Hux Blog 模板，原始模板仓库：[Huxpro/huxpro.github.io](https://github.com/Huxpro/huxpro.github.io)。
+
+## 许可证
+
+本项目采用 MIT 许可证。详见 [LICENSE](LICENSE) 文件。

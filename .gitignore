@@ -56,3 +56,6 @@ my-jekyll-theme/
 
 # GitHub Copilot files
 .github/copilot-instructions.md
+
+# Claude AI files
+.claude/
