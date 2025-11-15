@@ -1,10 +1,10 @@
 # Site settings
 title: TVXL Blog
-SEOTitle: TVXL Blog | 技术博客
+SEOTitle: TVXL Blog
 header-img: img/home-bg.png
 email: tVXL301@gmail.com
 description: "分享技术、记录成长 - TVXL的个人技术博客"
-keyword: "技术博客,前端开发,JavaScript,Web开发,编程"
+keyword: "技术博客,编程"
 url: "https://tvxl.top"
 baseurl: ""
 
@@ -80,7 +80,7 @@ ga_domain: tvxl.top
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "不知道写啥，曼波两声得了。"
+sidebar-about-description: "。。。。。"
 sidebar-avatar: /img/avatar.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 

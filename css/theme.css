@@ -306,6 +306,89 @@ footer .copyright a {
   color: var(--link-hover);
 }
 
+/* Footer and Sidebar social icons - unified styles */
+footer .list-inline li a,
+.sidebar-container .list-inline li a {
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+footer .list-inline li a:hover,
+footer .list-inline li a:focus,
+.sidebar-container .list-inline li a:hover,
+.sidebar-container .list-inline li a:focus {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+/* Icon circles - light mode */
+footer .list-inline li a .fa-circle,
+.sidebar-container .list-inline li a .fa-circle {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+footer .list-inline li a:hover .fa-circle,
+footer .list-inline li a:focus .fa-circle,
+.sidebar-container .list-inline li a:hover .fa-circle,
+.sidebar-container .list-inline li a:focus .fa-circle {
+  color: var(--link-hover);
+}
+
+/* Icon inner icons - light mode */
+footer .list-inline li a .fa-inverse,
+.sidebar-container .list-inline li a .fa-inverse {
+  color: var(--bg-color);
+}
+
+/* Dark mode icons */
+[data-theme="dark"] footer .list-inline li a,
+[data-theme="dark"] .sidebar-container .list-inline li a {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] footer .list-inline li a:hover,
+[data-theme="dark"] footer .list-inline li a:focus,
+[data-theme="dark"] .sidebar-container .list-inline li a:hover,
+[data-theme="dark"] .sidebar-container .list-inline li a:focus {
+  color: var(--link-hover);
+}
+
+[data-theme="dark"] footer .list-inline li a .fa-circle,
+[data-theme="dark"] .sidebar-container .list-inline li a .fa-circle {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] footer .list-inline li a:hover .fa-circle,
+[data-theme="dark"] footer .list-inline li a:focus .fa-circle,
+[data-theme="dark"] .sidebar-container .list-inline li a:hover .fa-circle,
+[data-theme="dark"] .sidebar-container .list-inline li a:focus .fa-circle {
+  color: var(--link-hover);
+}
+
+[data-theme="dark"] footer .list-inline li a .fa-inverse,
+[data-theme="dark"] .sidebar-container .list-inline li a .fa-inverse {
+  color: var(--bg-color);
+}
+
+/* Sidebar social icons - size adapts to container */
+.sidebar-container .list-inline li a .fa-stack {
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  font-size: 1em;
+}
+
+.sidebar-container .list-inline li a .fa-stack .fa-stack-2x {
+  font-size: 2em;
+}
+
+.sidebar-container .list-inline li a .fa-stack .fa-stack-1x {
+  font-size: 1em;
+  line-height: 2em;
+}
+
 /* Pager */
 .pager li > a,
 .pager li > span {
@@ -458,4 +541,302 @@ hr {
 /* Smooth transitions for theme changes */
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Search functionality */
+.search-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  color: white;
+  padding: 20px 15px;
+  display: block;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.search-icon:hover,
+.search-icon:focus {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.navbar-custom.is-fixed .search-icon {
+  color: var(--text-color);
+}
+
+.navbar-custom.is-fixed .search-icon:hover,
+.navbar-custom.is-fixed .search-icon:focus {
+  color: var(--link-hover);
+}
+
+/* Search icon in header (left of toggle button) - mobile only */
+.search-icon-header {
+  padding: 15px;
+  line-height: 20px;
+  margin-right: 0;
+  position: relative;
+}
+
+/* Ensure brand is on left, search and toggle are on right */
+@media only screen and (max-width: 767px) {
+  /* Remove right padding from container to allow toggle to touch screen edge */
+  .navbar-custom .container-fluid {
+    padding-right: 0;
+  }
+
+  .navbar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  .navbar-header .navbar-brand {
+    order: 1;
+    flex: 0 0 auto;
+    margin-left: 15px;
+  }
+
+  /* Group search and toggle together on the right */
+  .navbar-header .search-icon-header {
+    order: 2;
+    float: none;
+    flex: 0 0 auto;
+    margin-left: auto;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .navbar-header .navbar-toggle {
+    order: 3;
+    margin-left: 0;
+    margin-right: 0;
+    flex: 0 0 auto;
+    padding-right: 0;
+    padding-left: 15px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .search-icon-header {
+    display: none;
+  }
+}
+
+/* Show search in header on mobile, hide in navbar */
+@media only screen and (max-width: 767px) {
+  .navbar-collapse .search-icon {
+    display: none;
+  }
+  
+  .search-icon-header {
+    display: block;
+  }
+}
+
+/* Search Modal */
+.search-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.search-modal.active {
+  display: block;
+  opacity: 1;
+}
+
+.search-modal-content {
+  background-color: var(--card-bg);
+  margin: 5% auto;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.search-modal.active .search-modal-content {
+  transform: scale(1);
+}
+
+.search-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.search-modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.search-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.search-modal-close:hover,
+.search-modal-close:focus {
+  color: var(--link-hover);
+  outline: none;
+}
+
+.search-modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.search-input-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  font-size: 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--link-hover);
+}
+
+.search-input-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-results {
+  min-height: 100px;
+}
+
+.search-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.search-result-item {
+  display: block;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.search-result-item:hover,
+.search-result-item:focus {
+  border-color: var(--link-hover);
+  background-color: var(--code-bg);
+  text-decoration: none;
+  transform: translateX(4px);
+}
+
+.search-result-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.search-result-item:hover .search-result-title,
+.search-result-item:focus .search-result-title {
+  color: var(--link-hover);
+}
+
+.search-result-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.search-result-content {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.search-result-item mark {
+  background-color: var(--link-hover);
+  color: var(--bg-color);
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.search-no-results {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 767px) {
+  .search-modal-content {
+    width: 95%;
+    margin: 10% auto;
+    max-height: 85vh;
+  }
+
+  .search-icon {
+    padding: 15px 10px;
+  }
+
+  .navbar-collapse .search-icon {
+    color: var(--text-color);
+  }
+
+  .navbar-collapse .search-icon:hover,
+  .navbar-collapse .search-icon:focus {
+    color: var(--link-hover);
+  }
 }
